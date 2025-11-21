@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Italo Ordini - Gestione Aziendale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-primary text-white shadow-sm">
+      <div class="container-fluid">
+        <button class="btn btn-warning me-auto" id="btnEliminaOrdine">Elimina Intero Ordine</button>
+        <span class="mx-auto navbar-text fw-bold fs-4 text-center">Italo Ordini</span>
+        <a href="prodotti/prodotti.html">
+          <button class="btn btn-success ms-auto">Gestione Prodotti</button>
+        </a>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-3 gap-2">
+        <button class="btn btn-accent" id="btnAggiungiPersona">Aggiungi Persona</button>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-danger" id="btnEliminaSelezionati" disabled>Elimina selezionati</button>
+      </div>
+      <!-- Tabella Persone -->
+      <div class="table-responsive">
+        <table class="table table-striped table-modern align-middle" id="tabellaPersone">
+          <thead>
+            <tr>
+              <th scope="col">
+                <input type="checkbox" id="checkboxSelezionaTutti">
+              </th>
+              <th scope="col">Nome</th>
+              <th scope="col">Cognome</th>
+              <th scope="col">Prodotti</th>
+              <th scope="col">Modifica</th>
+              <th scope="col">Elimina</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Righe generate dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <!-- Riquadri Totali Prodotti -->
+      <div class="row g-3" id="totaliProdotti">
+        <!-- Card generate dinamicamente -->
+      </div>
+    </div>
+
+    <!-- Modal Aggiungi/Modifica Persona -->
+    <div class="modal fade" id="modalPersona" tabindex="-1" aria-labelledby="modalPersonaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="modalPersonaLabel">Aggiungi Persona</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formPersona">
+              <div class="mb-3">
+                <label for="inputNome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="inputNome" required>
+              </div>
+              <div class="mb-3">
+                <label for="inputCognome" class="form-label">Cognome</label>
+                <input type="text" class="form-control" id="inputCognome" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Prodotti</label>
+                <div class="input-group mb-2">
+                  <select class="form-select" id="selectProdotto">
+                    <!-- Opzioni generate da JS -->
+                  </select>
+                  <input type="number" min="1" class="form-control" id="inputQuantita" placeholder="Quantità" style="max-width:100px;">
+                  <button class="btn btn-accent" type="button" id="btnAggiungiProdotto">Aggiungi Prodotto</button>
+                </div>
+                <ul class="list-group" id="listaProdottiAggiunti"></ul>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer flex-column flex-sm-row">
+            <button type="button" class="btn btn-secondary mb-2 mb-sm-0" data-bs-dismiss="modal">Chiudi</button>
+            <button type="button" class="btn btn-primary" id="btnSalvaPersona">Salva</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS e script custom -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

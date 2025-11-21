@@ -1,0 +1,165 @@
+/* Palette principale */
+:root {
+  --primary: #0d47a1;
+  --primary-light: #5472d3;
+  --accent: #ffb300;
+  --accent-dark: #ff8f00;
+  --success: #43a047;
+  --danger: #e53935;
+  --bg: #f5f7fa;
+  --white: #fff;
+  --gray: #e0e0e0;
+  --text: #222;
+}
+
+/* Body e sfondo */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--primary) !important;
+  color: var(--white);
+  border-bottom: 2px solid var(--primary-light);
+}
+.navbar .navbar-text {
+  color: var(--white) !important;
+}
+.navbar .btn-warning {
+  background: var(--accent);
+  color: var(--primary);
+  border: none;
+  font-weight: 600;
+}
+.navbar .btn-success {
+  background: var(--success);
+  border: none;
+  font-weight: 600;
+}
+
+/* Bottoni custom */
+.btn-accent {
+  background: var(--accent);
+  color: var(--primary);
+  font-weight: 600;
+  border: none;
+  transition: background 0.2s;
+}
+.btn-accent:hover, .btn-accent:focus {
+  background: var(--accent-dark);
+  color: var(--white);
+}
+
+/* Tabella moderna */
+.table-modern {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(13, 71, 161, 0.07);
+}
+.table-modern th {
+  background: var(--primary-light);
+  color: var(--white);
+  font-weight: 600;
+  border: none;
+}
+.table-modern td {
+  vertical-align: middle;
+  border: none;
+}
+.table-modern tr {
+  transition: background 0.15s;
+}
+.table-modern tr:hover {
+  background: var(--gray);
+}
+
+/* Card totali prodotti */
+#totaliProdotti .card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(13, 71, 161, 0.08);
+  background: var(--white);
+  transition: transform 0.15s;
+}
+#totaliProdotti .card:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+#totaliProdotti .card-title {
+  color: var(--primary);
+  font-weight: 600;
+}
+#totaliProdotti .card-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(13, 71, 161, 0.13);
+}
+.modal-header {
+  border-bottom: 1px solid var(--primary-light);
+}
+.modal-footer {
+  border-top: 1px solid var(--primary-light);
+}
+
+/* Input e select */
+.form-control, .form-select {
+  border-radius: 8px;
+  border: 1px solid var(--primary-light);
+  box-shadow: none;
+  transition: border 0.2s;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(13, 71, 161, 0.08);
+}
+
+/* Lista prodotti aggiunti */
+#listaProdottiAggiunti .list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border-radius: 6px;
+  background: var(--gray);
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+#listaProdottiAggiunti .btn {
+  font-size: 0.9rem;
+  padding: 0.2rem 0.6rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .navbar .navbar-text {
+    font-size: 1.2rem;
+  }
+  .table-modern th, .table-modern td {
+    font-size: 0.95rem;
+  }
+  #totaliProdotti .card-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar .navbar-text {
+    font-size: 1rem;
+  }
+  .container {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  .modal-dialog {
+    margin: 1rem;
+  }
+}
